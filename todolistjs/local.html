@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="fetchlist()">
+    <input type="text" id="input">
+    <br>
+    <h3 id="myheading">Yahan per local storage ka data show karwana hai</h3>
+    <button onclick="addtolist()">Add Task</button>
+    <button onclick="fetchlist()">Fetch Task</button>
+    <script>
+       var arr = []
+        function addtolist() {
+           
+           var a = document.getElementById('input').value
+           arr.push(a)
+           localStorage.setItem('username',arr)
+        }
+        function fetchlist(){
+            var b = localStorage.getItem('username')
+            var h3 = document.getElementById('myheading')
+            h3.innerText = b
+        }
+    </script>
+</body>
+</html>

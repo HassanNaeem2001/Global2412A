@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input
+        {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+        }
+        textarea
+        {
+            margin-top: 10px;
+            width: 100%;
+        }
+        button{
+            margin-top: 10px;
+            padding: 10px;
+            width: 70%;
+            
+        }
+    </style>
+</head>
+
+<body>
+    <div style="display: flex;align-items: center;justify-content: center;height: 80vh;">
+        <div>
+            <h3>Contact Us Form</h3>
+            <hr>
+            <input type="text" id="inp1" placeholder="Enter username">
+            <br>
+        
+            <input type="email" id="inp2" placeholder="Enter email">
+            <br>
+            <textarea name="" id="inp3" placeholder="Enter your message"
+             rows="5"></textarea>
+            <br>
+            <br>
+            <button onclick="sendmessage()">Send Message</button>
+        </div>
+    </div>
+    <script type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+(function(){
+  emailjs.init({
+    publicKey: "lwiT-zVFwHBrGAY97",
+  });
+})();
+
+</script>
+    <script>
+        function sendmessage() {
+            var username = document.getElementById('inp1').value;
+            var email = document.getElementById('inp2').value;
+            var message = document.getElementById('inp3').value;
+            //validate inputs
+            if (username.trim() === '' || email.trim() === '' || message.trim() === '') {
+                alert('Please fill all fields');
+               
+            }
+            else
+            {
+                var obj = {
+                    'name':username,
+                    'email': email,
+                   'message': message
+                }
+                emailjs.send('service_ubkngf4', 'template_q3njc72', obj);
+
+                alert('Message sent successfully');
+                document.getElementById('inp1').value = '';
+                document.getElementById('inp2').value = '';
+                document.getElementById('inp3').value = '';
+            }
+        }
+    </script>
+</body>
+
+</html>

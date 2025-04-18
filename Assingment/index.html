@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Web Page with Animations</title>
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1 class="title" data-aos="fade-down">Welcome to My Web Page</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="content">
+        <div class="container">
+            <div class="card" data-aos="flip-left">
+                <h2>Card 1</h2>
+                <p>This is an animated card. Scroll down to see the effect.</p>
+            </div>
+            <div class="card" data-aos="flip-right">
+                <h2>Card 2</h2>
+                <p>This is another card with a different animation effect.</p>
+            </div>
+            <div class="card" data-aos="zoom-in">
+                <h2>Card 3</h2>
+                <p>And here's a card with zoom-in animation.</p>
+            </div>
+        </div>
+    </section>
+
+  
+
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+    </script>
+</body>
+</html>
+

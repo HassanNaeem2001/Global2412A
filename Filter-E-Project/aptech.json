@@ -1,0 +1,24 @@
+[
+    {
+        "Name":"Pakistan",
+        "Provinces":[
+            {
+                "Name":"Sindh",
+                "Cities":["Karachi","Hyderabad"]
+            },
+            {
+                "Name":"Punjab",
+                "Cities":["Islamabad","Murree"]
+            },
+            {
+                "Name":"Balochistan",
+                "Cities":["Khuzdar","Quetta"]
+            },
+            {
+                "Name":"KPK",
+                "Cities":["Peshawar","Swat"]
+            }
+        ]
+    }
+  
+]

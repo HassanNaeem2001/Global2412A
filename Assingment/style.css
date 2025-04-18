@@ -1,0 +1,134 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header */
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 60px 0;
+    text-align: center;
+}
+
+h1.title {
+    font-size: 3rem;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+/* Sections */
+.content, .about-section, .contact-section {
+    padding: 60px 0;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.card h2 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.card p {
+    font-size: 1rem;
+    color: #555;
+}
+
+.about-section h2, .contact-section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.team {
+    display: flex;
+    justify-content: space-between;
+}
+
+.team-member {
+    text-align: center;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+form button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+    .team {
+        flex-direction: column;
+    }
+
+    .content {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .content {
+        grid-template-columns: 1fr;
+    }
+
+    h1.title {
+        font-size: 2rem;
+    }
+
+    p.subtitle {
+        font-size: 1.2rem;
+    }
+}
+

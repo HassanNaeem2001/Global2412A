@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .mydiv
+        {
+            height: auto;
+            background-color: lightblue;
+            margin: 10px;
+            padding: 8px;
+        }
+    </style>
+</head>
+<body>
+    <h3>Wishlist </h3>
+    <hr>
+    <div id="myparent">
+
+    </div>
+    <hr>
+    <button onclick="checkout()">Checkout Now</button>
+    <script>
+        
+
+        function checkout() {
+            localStorage.removeItem('list');
+            alert('Your order has been placed successfully. Thank you for shopping with us.')
+            window.location.href = 'index.html';
+        }
+
+        if(localStorage.getItem('code') == 123)
+        {
+            var list = JSON.parse(localStorage.getItem('list'))
+        console.log(list)
+
+        var parent = document.getElementById('myparent');
+
+       
+        for (let i = 0; i < list.length; i++) {
+            var div = document.createElement('div');
+            var h2 = document.createElement('h2');
+            var p = document.createElement('p');
+            var b = document.createElement('b');
+            div.className ='mydiv';
+
+            h2.innerHTML = list[i].name;
+            p.innerHTML = list[i].price;
+            b.innerHTML = "Product Total = "+list[i].total+" PKR";
+
+            div.append(h2)
+            div.append(p)
+            div.append(b)
+            parent.append(div)
+        }
+        }
+        else
+        {
+            alert('Your wishlist is empty. Please add items to continue shopping.')
+            window.location.href = 'index.html';
+        }
+    </script>
+</body>
+</html>

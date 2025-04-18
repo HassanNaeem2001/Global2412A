@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.14.1/themes/base/jquery-ui.min.css" integrity="sha512-TFee0335YRJoyiqz8hA8KV3P0tXa5CpRBSoM0Wnkn7JoJx1kaq1yXL/rb8YFpWXkMOjRcv5txv+C6UluttluCQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.14.1/themes/base/theme.min.css" integrity="sha512-lfR3NT1DltR5o7HyoeYWngQbo6Ec4ITaZuIw6oAxIiCNYu22U5kpwHy9wAaN0vvBj3U6Uy2NNtAfiaKcDxfhTg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.14.1/themes/black-tie/jquery-ui.min.css" integrity="sha512-bVIVlufxYIog6AKd3iWWUpQ/OSA0Zk4h0g1d2X42010UmLrpF9fPkNyQYMZSb+pt85IwdJIbGEiHWg3d5chHNQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <input type="text" placeholder="Search any city" id="input" onkeyup="search()">
+
+    <hr>
+    <h3>Cities</h3>
+    <img src="karachi.jfif" alt="" id="karachi">
+    <img src="islamabad.jfif" alt="" id="islamabad">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.14.1/jquery-ui.min.js"
+        integrity="sha512-MSOo1aY+3pXCOCdGAYoBZ6YGI0aragoQsg1mKKBHXCYPIWxamwOE7Drh+N5CPgGI5SA9IEKJiPjdfqWFWmZtRA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+
+        function search() {
+            var cities = [
+                "Karachi",
+                "Lahore",
+                "Islamabad",
+                "Peshawar",
+                "Quetta"
+            ];
+            $('#input').autocomplete({
+                source: cities
+            })
+            if($('#input').val() == 'Karachi')
+            {
+                $('#karachi').show()
+                $('#islamabad').hide()
+            }
+            else if($('#input').val() == 'Islamabad')
+            {
+                $('#karachi').hide()
+                $('#islamabad').show()
+            }
+        }
+    </script>
+</body>
+
+</html>

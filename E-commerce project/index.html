@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+    </style>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="wishlist.html">Go to Wishlist</a>
+    <!--i need 3 divs in a line with images , name and price, description and button for add to cart as well for my e-commerce layout with display flex-->
+     <div class="product-list">
+        <!--each div should have 3 child divs for image, name, price, description and button-->
+        <div class="product">
+            <div class="image">
+                <img src="Files/bottle.png" height="400px" alt="Product 1">
+            </div>
+            <div class="name">Product 1</div>
+            <div class="price">$19.99</div>
+            <div class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. </div>
+            <input type="number" class="quantity">
+            <button class="add-to-cart" onclick="generatebill(19.99,'Product 1',1,'Files/bottle.png')">Add to Cart</button>
+        </div>
+        <div class="product">
+            <div class="image">
+                <img src="Files/cornflakes-4907490_1280 (1).jpg" alt="Product 1" height="400px">
+            </div>
+            <div class="name">Product 2</div>
+            <div class="price">$49.99</div>
+            <div class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. </div>
+            <input type="number" class="quantity">
+            <button class="add-to-cart" onclick="generatebill(49.99,'Product 2',2,'Files/cornflakes-4907490_1280 (1).jpg')">Add to Cart</button>
+        </div>
+        <div class="product">
+            <div class="image">
+                <img src="Files/cornflakes-4907490_1280 (1).jpg" alt="Product 1" height="400px">
+            </div>
+            <div class="name">Product 2</div>
+            <div class="price">$49.99</div>
+            <div class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. </div>
+            <input type="number" class="quantity">
+            <button class="add-to-cart" onclick="generatebill(70.99,'Product 3',3,'Files/cornflakes-4907490_1280 (1).jpg')">Add to Cart</button>
+        </div>
+     </div>
+    <script src="main.js"></script>
+  <!-- Start of Async Drift Code -->
+<script>
+    "use strict";
+    
+    !function() {
+      var t = window.driftt = window.drift = window.driftt || [];
+      if (!t.init) {
+        if (t.invoked) return void (window.console && console.error && console.error("Drift snippet included twice."));
+        t.invoked = !0, t.methods = [ "identify", "config", "track", "reset", "debug", "show", "ping", "page", "hide", "off", "on" ], 
+        t.factory = function(e) {
+          return function() {
+            var n = Array.prototype.slice.call(arguments);
+            return n.unshift(e), t.push(n), t;
+          };
+        }, t.methods.forEach(function(e) {
+          t[e] = t.factory(e);
+        }), t.load = function(t) {
+          var e = 3e5, n = Math.ceil(new Date() / e) * e, o = document.createElement("script");
+          o.type = "text/javascript", o.async = !0, o.crossorigin = "anonymous", o.src = "https://js.driftt.com/include/" + n + "/" + t + ".js";
+          var i = document.getElementsByTagName("script")[0];
+          i.parentNode.insertBefore(o, i);
+        };
+      }
+    }();
+    drift.SNIPPET_VERSION = '0.3.1';
+    drift.load('6rxnd6us7zgm');
+    </script>
+    <!-- End of Async Drift Code -->
+</body>
+</html>

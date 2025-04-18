@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .question2{
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="question1">
+        <h3>Level 1</h3>
+        <hr>
+        <p>A</p>
+        <input type="text" class="input">
+        <input type="text" class="input">
+        <input type="text" class="input">
+        <p>E</p>
+    </div>
+    <div class="question2">
+        <h3>Level 2</h3>
+        <hr>
+        <p>B</p>
+        <input type="text" class="input">
+        <input type="text" class="input">
+        <input type="text" class="input">
+        <p>A</p>
+    </div>
+    <div class="question2">
+        <h3>Level 2</h3>
+        <hr>
+        <p>B</p>
+        <input type="text" class="input">
+        <input type="text" class="input">
+        <input type="text" class="input">
+        <p>A</p>
+    </div>
+    <button onclick="guesstheword()">Okay</button>
+
+    <script>
+       function guesstheword()
+       {
+        var inp = document.getElementsByClassName('input')
+       if(inp[0].value == 'P' && inp[1].value == 'P' && inp[2].value == 'L')
+       {
+         alert('APPLE');
+         var q2 = document.getElementsByClassName('question2')
+         q2[0].style.display = 'block';
+       }
+       else
+       {
+        alert('BANANA');
+       }
+
+       }
+    </script>
+</body>
+
+</html>

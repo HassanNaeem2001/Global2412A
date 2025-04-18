@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .text{
+            color: red;
+            font-size: 24px;
+        }
+        .mychild{
+            flex: 30%;
+            background-color: blueviolet;
+            margin: 10px;
+            height:100px;
+
+        }
+    </style>
+</head>
+<body id="mybody">
+    
+    <script>
+       
+    //    var div = document.getElementById('mydiv')
+       
+    //    for(var i = 0 ; i < 100; i++){
+    //     var p =  document.createElement('p')
+    //      p.innerText = 'Hello World '+i
+    //       p.className = 'text'
+    //      div.appendChild(p)
+    //    }
+    var body = document.getElementById('mybody')
+
+    var parent = document.createElement('div')
+    parent.style.display='flex'
+
+    for(var i = 0 ; i < 5 ; i++){
+        var child = document.createElement('div')
+        child.className = 'mychild'
+        parent.appendChild(child)
+    }
+    body.appendChild(parent)
+       
+      
+
+      
+    </script>
+</body>
+</html>

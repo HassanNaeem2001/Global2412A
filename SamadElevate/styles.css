@@ -1,0 +1,941 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Playfair+Display:wght@700&family=Bodoni+Moda:wght@700&family=Forum&family=Cormorant+Garamond:wght@700&display=swap');
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  cursor: pointer;
+  overflow-x: hidden;
+}
+
+.bgvideo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.bgvideo video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+
+}
+
+.container {
+  display: flex;
+  width: 100%;
+}
+
+.sidebar {
+  height: 100vh;
+  width: 250px;
+  background-color: black;
+  color: white;
+  position: fixed;
+  left: -250px;
+  transition: all 0.3s ease;
+  padding-top: 50px;
+  z-index: 1;
+}
+
+.sidebar.active {
+  left: 0;
+}
+
+.sidebar ul {
+  list-style: none;
+}
+
+.sidebar .links ul a {
+  display: block;
+  /* Ensures full clickable area */
+  margin-top: 70px;
+  margin-left: -20px;
+  font-size: 14px;
+  font-family: 'Cinzel', serif;
+  cursor: pointer;
+  color: white;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: color 0.3s ease-in-out;
+  padding: 12px 0;
+  /* Adds extra spacing inside */
+}
+
+.sidebar .links ul a::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  /* Moves background further up */
+  left: -100%;
+  width: 100%;
+  height: 250%;
+  /* Makes background much taller */
+  background-color: white;
+  /* Background that slides in */
+  transition: left 0.3s ease-in-out;
+  z-index: -1;
+}
+
+.sidebar .links ul a:hover::before {
+  left: 0;
+  /* Slide effect from left to right */
+}
+
+.sidebar .links ul a:hover {
+  color: black;
+  /* Change text color on hover */
+}
+
+
+
+
+.sidebar .logoslider ul li {
+  margin-top: 70px;
+  margin-left: -20px;
+  text-align: center;
+  font-family: 'Cinzel', serif;
+
+}
+
+
+/* 
+.sidebar ul li:hover {
+  padding: 15px;
+  text-align: center;
+
+} */
+
+.sidebar ul li a {
+  color: white;
+  text-decoration: none;
+  display: block;
+  font-size: 18px;
+}
+
+.toggle-btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 1;
+}
+
+.toggle-btn span {
+  display: block;
+  width: 30px;
+  height: 4px;
+  background-color: black;
+  transition: all 0.3s ease;
+}
+
+.toggle-btn.active span:nth-child(1) {
+  transform: rotate(45deg);
+  top: 8px;
+}
+
+.toggle-btn.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.toggle-btn.active span:nth-child(3) {
+  transform: rotate(-45deg);
+  top: -8px;
+}
+
+.content {
+  margin-left: 250px;
+  padding: 20px;
+  transition: margin-left 0.3s ease;
+}
+
+.sidebar.active+.content {
+  margin-left: 0;
+}
+
+.heading {
+  margin-top: 500px;
+  margin-left: 200px;
+}
+
+.heading h1 {
+  color: #fff;
+}
+
+.login,
+.register {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border: 3px solid white;
+  color: white;
+  width: 150px;
+  /* Keep original width */
+  font-weight: bold;
+  text-align: center;
+  padding: 12px 0;
+  /* Keep height same */
+  overflow: hidden;
+  cursor: pointer;
+  transition: color 0.3s ease-in-out;
+  margin-bottom: 20px;
+  /* Space between Login & Register */
+}
+
+.login::before,
+.register::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  /* Extend background above & below */
+  left: -100%;
+  width: 100%;
+  height: 250%;
+  /* Keeps background large */
+  background-color: white;
+  transition: left 0.3s ease-in-out;
+  z-index: -1;
+}
+
+.login:hover::before,
+.register:hover::before {
+  left: 0;
+  /* Slide effect from left to right */
+}
+
+.login:hover,
+.register:hover {
+  color: black;
+  /* Text color change */
+}
+
+.add-to-cart {
+  color: black;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  float: right;
+  margin-left: 500px;
+  margin-bottom: 670px;
+  position: relative;
+  top: 5px;
+}
+
+.material-symbols-outlined {
+  font-size: 25px;
+
+}
+
+.wishlist-btn {
+
+  margin-bottom: 660px;
+  color: black;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+
+.material-symbols-outlined {
+  font-size: 20px;
+
+}
+
+.slider-container {
+  width: 600px;
+  height: 300px;
+  position: relative;
+  margin: auto;
+  margin-top: -550px;
+
+}
+
+.slider {
+  display: flex;
+  width: 300%;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slider img {
+  width: 100%;
+  max-width: 600px;
+  height: 200px;
+  flex-shrink: 0;
+  display: block;
+}
+
+
+.prev,
+.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 24px;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+.prev:hover,
+.next:hover {
+  background-color: black;
+}
+
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo h3 {
+  margin-top: 70px;
+  text-align: center;
+  font-family: 'Cinzel', serif;
+
+}
+
+.icons {
+  padding: 10px;
+
+}
+
+.about-video {
+  position: relative;
+  width: 100%;
+  height: 450px;
+  overflow: hidden;
+}
+
+.about-video video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  background: transparent;
+}
+
+.about-heading {
+  font-size: 50px;
+  background: #ffffff33;
+  padding: 20px;
+
+  border-radius: 2px solid;
+  backdrop-filter: blur(5px);
+  font-weight: bold;
+  font-family: 'Cinzel', serif;
+  color: white;
+}
+
+.aboutelevate p {
+  font-size: 22px;
+  text-align: center;
+  color: #242424;
+  font-family: 'Merriweather', serif;
+}
+
+.aboutelevate {
+  padding: 25px;
+}
+
+.card .hding h5 {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.card {
+  width: 300px;
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 1px;
+}
+
+.card p {
+  font-weight: bold;
+  color: gray;
+  font-size: 17px;
+
+}
+
+.card:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease-in-out;
+  background-color: #D3D3D3;
+}
+
+.our-owner .img-owner img {
+  width: 20%;
+  height: 50%;
+}
+
+.our-owner {
+  margin-top: 150px;
+}
+
+.our-owner .heading-owner h1 {
+  font-family: 'Cinzel', serif;
+}
+
+.our-owner .heading-owner h3 {
+  color: darkgrey;
+  font-family: 'Cinzel', serif;
+  font-weight: bold;
+}
+
+.our-owner .heading-owner span {
+  color: black;
+  font-family: 'Cinzel', serif;
+}
+
+.img-name {
+  margin-top: 30px;
+  border: 2px solid black;
+  width: 400px;
+  height: 600px;
+}
+
+.img-name:hover {
+  background-color: #D3D3D3;
+  transform: scale(1.05);
+  transition: transform 0.3s ease-in-out;
+}
+
+.img-name .img-owner img {
+  width: 100%;
+  height: 350px;
+}
+
+.img-name .owner-name h1 {
+  font-weight: bold;
+  font-family: 'Cinzel', serif;
+  font-size: 40px;
+}
+
+.img-name .owner-name h3 {
+  font-weight: bold;
+  font-family: 'Merriweather', serif;
+  font-size: 20px;
+  color: darkgrey;
+}
+
+.img-name .owner-name span {
+  color: black;
+}
+
+.aboutelevate .heading-about {
+  text-align: center;
+
+}
+
+.aboutelevate .heading-about h1 {
+  text-align: center;
+  font-size: 35px;
+  font-family: 'Cinzel', serif;
+  font-weight: bold;
+}
+
+.aboutelevate .who-we-are {
+  margin-top: 90px;
+  border: 1px solid black;
+  padding: 10px;
+}
+
+.aboutelevate .missons {
+  margin-top: 90px;
+  border: 1px solid black;
+  padding: 10px;
+}
+
+.aboutelevate .offer {
+  margin-top: 90px;
+  border: 1px solid black;
+  padding: 10px;
+}
+
+.aboutelevate .why-chosse-us {
+  margin-top: 90px;
+  background: transparent;
+  border: 1px solid black;
+  padding: 10px;
+}
+
+
+
+.aboutelevate .who-we-are:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease-in-out;
+  background-color: #D3D3D3;
+}
+
+.aboutelevate .missons:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease-in-out;
+  background-color: #D3D3D3;
+}
+
+.aboutelevate .offer:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease-in-out;
+  background-color: #D3D3D3;
+}
+
+.aboutelevate .why-chosse-us:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease-in-out;
+  background-color: #D3D3D3;
+
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+
+::-webkit-scrollbar-track {
+  background-color: black;
+
+}
+
+
+::-webkit-scrollbar-thumb {
+  background-color: #1C1C1C;
+
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #303030;
+}
+
+.bestphones {
+  margin-top: 90px;
+  text-align: center;
+
+}
+
+.bestphones button {
+  position: relative;
+  border: 1px solid black;
+  padding: 10px;
+  border-radius: 10px;
+  font-weight: bold;
+  font-family: 'Merriweather', serif;
+  background-color: white;
+  color: black;
+  overflow: hidden;
+  transition: transform 0.1s ease-in-out, color 0.4s ease-in-out;
+  margin-top: 50px;
+}
+
+
+.bestphones button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  transition: right 0.4s ease-in-out;
+  z-index: -1;
+  color: white;
+}
+
+
+.bestphones button:hover {
+  transform: scale(1.05);
+  color: white;
+}
+
+
+.bestphones button:hover::before {
+  right: 0;
+}
+
+.products h1 {
+  font-size: 50px;
+  text-align: center;
+  margin-top: 100px;
+  font-weight: bold;
+  font-family: 'Cinzel', serif;
+  color: black;
+}
+
+.card-img-top {
+  height: 250px;
+  object-fit: contain;
+  background-color: #f8f9fa;
+}
+
+
+
+.card {
+  height: 100%;
+  padding: 5px;
+}
+
+
+.row.g-4>div {
+  display: flex;
+}
+
+.card-body {
+  flex-grow: 1;
+}
+
+
+.card button {
+  position: relative;
+  font-weight: bold;
+  font-size: 18px;
+  border: 1px solid gray;
+  background-color: white;
+  color: black;
+  width: 100%;
+  padding: 10px;
+  overflow: hidden;
+  z-index: 1;
+  transition: color 0.4s ease-in-out;
+}
+
+
+.card button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  transition: right 0.4s ease-in-out;
+  z-index: -1;
+}
+
+.card button:hover {
+  color: white;
+}
+
+.card button:hover::before {
+  right: 0;
+}
+
+.card h5 {
+  font-weight: bold;
+  font-family: 'Cinzel', serif;
+  font-size: 25px;
+}
+
+.image-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.main-img {
+  transition: opacity 0.4s ease-in-out;
+}
+
+.hover-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+}
+
+
+.image-container:hover .main-img {
+  opacity: 0;
+}
+
+.image-container:hover .hover-img {
+  opacity: 1;
+}
+
+.wishlist {
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: black;
+  color: white;
+  padding: 10px;
+  border-radius: 2px;
+  font-size: 14px;
+  font-weight: bold;
+  transition: bottom 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  opacity: 0;
+  text-decoration: none;
+  width: 100%;
+}
+
+
+.image-container:hover .wishlist {
+  bottom: 10px;
+  opacity: 1;
+}
+
+.shop-by-brands h1 {
+  font-size: 40px;
+  text-align: center;
+  margin-top: 50px;
+  font-weight: bold;
+  font-family: 'Cinzel', serif;
+  color: black;
+}
+
+.brand-card img {
+  width: 45%;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ddd;
+  margin-top: 40px;
+}
+
+.brand-card h4 {
+  text-align: center;
+  margin-right: 250px;
+  font-weight: bold;
+  font-family: 'Cinzel', serif;
+  margin-top: 20px;
+}
+
+.bestphones h1 {
+  font-size: 40px;
+  text-align: center;
+  margin-top: 50px;
+  font-weight: bold;
+  font-family: 'Cinzel', serif;
+  color: black;
+}
+
+.products .card {
+  margin-left: 70px;
+  margin-top: 70px;
+}
+
+.brand-card img:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease-in-out;
+}
+
+.shop-by-brands button {
+  position: relative;
+  font-weight: bold;
+  font-size: 18px;
+  border: 1px solid gray;
+  background-color: white;
+  color: black;
+  width: 300px;
+  padding: 15px;
+  overflow: hidden;
+  z-index: 1;
+  transition: color 0.4s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 80px;
+  margin-right: 60px;
+
+}
+
+.shop-by-brands button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  transition: right 0.4s ease-in-out;
+  z-index: -1;
+}
+
+.shop-by-brands button:hover {
+  color: white;
+}
+
+.shop-by-brands button:hover::before {
+  right: 0;
+}
+
+.shop-by-brands button::after {
+  content: " \2192";
+  font-size: 18px;
+  margin-left: 10px;
+  transition: transform 0.4s ease-in-out;
+}
+
+.shop-by-brands button:hover::after {
+  transform: translateX(5px);
+}
+
+.all-brands h1 {
+  font-size: 40px;
+  text-align: center;
+  margin-top: 50px;
+  font-weight: bold;
+  font-family: 'Cinzel', serif;
+  color: black;
+}
+
+.samsung-s-phones h1 {
+  font-size: 40px;
+  text-align: center;
+  margin-top: 50px;
+  font-weight: bold;
+  font-family: 'Cinzel', serif;
+  color: black;
+}
+
+.highlight {
+  color: gray;
+  /* Change to your desired color */
+  font-weight: bold;
+}
+
+.samsung-s-phones .samsung-models {
+  margin-right: 150px;
+
+
+}
+
+.samsung-models button {
+  position: relative;
+  border: 1px solid black;
+  padding: 10px;
+  border-radius: 10px;
+  font-weight: bold;
+  font-family: 'Merriweather', serif;
+  background-color: white;
+  color: black;
+  overflow: hidden;
+  transition: transform 0.1s ease-in-out, color 0.4s ease-in-out;
+  margin-top: 50px;
+}
+
+
+.samsung-models button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  transition: right 0.4s ease-in-out;
+  z-index: -1;
+  color: white;
+}
+
+
+.samsung-models button:hover {
+  transform: scale(1.05);
+  color: white;
+}
+
+
+.samsung-models button:hover::before {
+  right: 0;
+}
+
+
+.apple-phones h1 {
+  font-size: 40px;
+  text-align: center;
+  margin-top: 50px;
+  font-weight: bold;
+  font-family: 'Cinzel', serif;
+  color: black;
+}
+
+.apple-phones button {
+  position: relative;
+  border: 1px solid black;
+  padding: 10px;
+  border-radius: 10px;
+  font-weight: bold;
+  font-family: 'Merriweather', serif;
+  background-color: white;
+  color: black;
+  overflow: hidden;
+  transition: transform 0.1s ease-in-out, color 0.4s ease-in-out;
+  margin-top: 50px;
+}
+
+
+.apple-phones button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  transition: right 0.4s ease-in-out;
+  z-index: -1;
+  color: white;
+}
+
+
+.apple-phones button:hover {
+  transform: scale(1.05);
+  color: white;
+}
+
+
+.apple-phones button:hover::before {
+  right: 0;
+}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>CountryName</h3>
+    <p>CityName</p>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+    <script>
+        $.ajax({
+            url:"https://api.openweathermap.org/data/2.5/weather?lat=24.86&lon=67.00&appid=2ac73c9436104aef95b307fc30de7bdc",
+            type:"GET",
+            success:function(data){
+                 console.log(data)
+                console.log(data.name)
+                console.log(data.main.feels_like)
+                console.log(data.weather[0].description)
+            }
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" placeholder="Enter name" class="input">
+    <br>
+    <input type="text" placeholder="Enter email" class="input">
+    <br>
+    <input type="text" placeholder="Enter password" class="input">
+    <br>
+    <button onclick="register()">Register</button>
+
+    <script>
+        var arr = []
+        function register()
+        {
+            var name = document.getElementsByClassName('input')[0].value;
+            var email = document.getElementsByClassName('input')[1].value;
+            var password = document.getElementsByClassName('input')[2].value;
+
+            var obj = {
+                "name":name,
+                "email":email,
+                "password":password
+            }
+            arr.push(obj)
+            localStorage.setItem('user',JSON.stringify(arr))
+        }
+    </script>
+
+</body>
+</html>
